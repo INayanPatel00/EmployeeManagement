@@ -1487,3 +1487,7 @@
 [INFO ] 2023-06-21 14:01:21.288 [http-nio-8080-exec-4] StudentServiceImpl - Entered into the method getAll()
 [INFO ] 2023-06-21 14:01:21.327 [http-nio-8080-exec-4] StudentServiceImpl - Fetching the list of student
 [INFO ] 2023-06-21 14:01:21.328 [http-nio-8080-exec-4] StudentServiceImpl - Student fetched successfully
+[INFO ] 2023-06-24 13:50:01.531 [main] Main - Starting Main using Java 19.0.1 with PID 20512 (C:\Users\nayan patel\Desktop\Nayan\Projects\TRY\target\classes started by nayan patel in C:\Users\nayan patel\Desktop\Nayan\Projects\TRY)
+[DEBUG] 2023-06-24 13:50:01.539 [main] Main - Running with Spring Boot v3.0.5, Spring v6.0.7
+[INFO ] 2023-06-24 13:50:01.541 [main] Main - No active profile set, falling back to 1 default profile: "default"
+[INFO ] 2023-06-24 13:50:12.030 [main] Main - Started Main in 11.155 seconds (process running for 12.885)
