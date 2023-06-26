@@ -10,8 +10,8 @@
 </head>
 <body>
 <h1>Student Details</h1>
-<form th:action="@{/students/edit/{id}(id=${user.id})}" th:method="post" th:object="${user}" th:id="form1">
-    <input type="hidden" th:field="*{id}" name="id" />
+<form th:action="@{/employees/edit/{id}(id=${user.id})}" th:method="post" th:object="${user}" th:id="form1">
+    <input type="text" th:field="*{id}" name="id" />
 <!--    <label for="id">ID</label>-->
 <!--    <input hidden="hidden" type="text" id="id" th:field="*{id}" name="id" th:value="${user.id}" required><br><br>-->
 

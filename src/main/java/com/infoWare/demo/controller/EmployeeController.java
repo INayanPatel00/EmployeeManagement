@@ -31,7 +31,7 @@ private final EmployeeService employeeService;
     @GetMapping("")
     public String viewAll(Model model) {
         List<EmployeeDTO> list =employeeService.getAll();
-                model.addAttribute("list", list);
+        model.addAttribute("list", list);
         return "view";
 
     }
@@ -56,13 +56,11 @@ private final EmployeeService employeeService;
         return "updateForm";
     }
     @PostMapping ("/edit/{id}")
-    public String updateStudentDetails(@ModelAttribute("user") EmployeeDTO user, @PathVariable("id") int id) throws SQLException {
-
+    public String updateStudentDetails(@ModelAttribute("user") EmployeeDTO user, @PathVariable("id") int id)  {
         employeeService.updateDetails(user,id);
         return "redirect:/employees";
 
     }
-
 
     @GetMapping("/delete/{id}")
     public String deleteById(@PathVariable("id") int id) {

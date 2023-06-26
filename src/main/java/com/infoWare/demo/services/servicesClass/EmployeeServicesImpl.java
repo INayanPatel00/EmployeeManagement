@@ -14,9 +14,7 @@ import com.infoWare.demo.services.serviceInterface.EmergencyContactService;
 import com.infoWare.demo.services.serviceInterface.EmployeeService;
 import com.infoWare.demo.services.serviceInterface.JobServices;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.Pageable;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -38,18 +36,6 @@ public class EmployeeServicesImpl implements EmployeeService {
         this.emergencyContactService = emergencyContactService;
         this.employeeRepository = employeeRepository;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
     @Override
     public List<EmployeeDTO> getAll() {
@@ -92,7 +78,6 @@ public class EmployeeServicesImpl implements EmployeeService {
         EmergencyContact primaryEmergencyContact =new EmergencyContact(employeeDTO.getEmergencyContactDTO().getPrimaryEmergencyName(),employeeDTO.getEmergencyContactDTO().getPrimaryEmergencyPhone(),employeeDTO.getEmergencyContactDTO().getPrimaryEmergencyRelation());
 
         EmergencyContact secondaryEmergencyContact =new EmergencyContact(employeeDTO.getEmergencyContactDTO().getSecondaryEmergencyName(),employeeDTO.getEmergencyContactDTO().getSecondaryEmergencyPhone(),employeeDTO.getEmergencyContactDTO().getSecondaryEmergencyRelation());
-        System.out.println("Address+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         addressService.insertAddress(address);
         jobServices.insertJob(job);
         emergencyContactService.insertEmergencyContact(primaryEmergencyContact);
@@ -105,15 +90,14 @@ public class EmployeeServicesImpl implements EmployeeService {
                 primaryEmergencyContact,
                 secondaryEmergencyContact,
                 job);
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println(employee);
+
         employeeRepository.save(employee);
     }
 
     public EmployeeDTO getById(int id){
 
         Optional<Employee> employee=employeeRepository.findById(id);
-        EmployeeDTO employeeDTO =new EmployeeDTO(employee.get().getName(),
+        EmployeeDTO employeeDTO =new EmployeeDTO(employee.get().getId(),employee.get().getName(),
                 employee.get().getPhone(),
                 employee.get().getEmail(),
                 new AddressDTO(employee.get().getAddress().getAddressLine(),
@@ -152,8 +136,7 @@ public class EmployeeServicesImpl implements EmployeeService {
                primaryEmergencyContact,
                secondaryEmergencyContact,
                job);
-       System.out.println("000000000000000000000000000000000000000000000000000000000000000000");
-       System.out.println(employee);
+
        employeeRepository.save(employee);
 
    }
